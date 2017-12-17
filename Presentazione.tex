@@ -1,0 +1,88 @@
+\documentclass{beamer}%[handout] slides non ripetute
+
+\usetheme{Singapore}
+\usecolortheme{rose}
+
+\usepackage[utf8]{inputenc}	%lettere accentate
+\usepackage[italian]{babel}	%sillabazione italiana
+\usepackage{amsmath}		%simboli matematici
+\usepackage{amsfonts}		%font matematici
+\usepackage{amssymb}		%altri simboli matematici
+\usepackage{tikz}			%grafica
+\usepackage{subfloat}		%affiancare figura
+\usepackage{cancel}			%simbolo di semplificazione
+\usepackage{pdfpages}		%incorporare pdf
+\usepackage{biblatex}		%bibliografia
+\usepackage{soul}			%testo barrato
+
+\newcommand{\tblue}[1]{\textcolor{blue}{#1}}
+
+\author{Marco Buracchi}
+
+\title{Algoritmi crittografici a chiave condivisa: da Giulio Cesare ai giorni nostri}
+
+\logo{\includegraphics[scale=0.5]{logo/logoDX0.eps}}
+
+\institute{Università degli studi di Firenze}
+
+\date{\today}
+
+\subject{Security engineering}
+
+%\setbeamercovered{transparent}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{caption}{size=\scriptsize}
+
+\begin{document}
+	
+	\maketitle
+	
+	\include{chap/intro}
+	\include{chap/giulio}
+	\include{chap/vigenere}
+	\include{chap/otp}
+	\include{chap/enigma}
+	\include{chap/feistel}
+	\include{chap/des}
+	\include{chap/aes}
+	\include{chap/rc4}
+	
+	{ % all template changes are local to this group.
+		\setbeamertemplate{navigation symbols}{}
+		\begin{frame}[plain]
+			\begin{tikzpicture}[remember picture,overlay]
+			\node[at=(current page.center)] {
+				\includegraphics[scale=0.45]{img/All}
+			};
+			\end{tikzpicture}
+		\end{frame}
+	}
+
+	\begin{frame}{Bibliografia}
+		\begin{thebibliography}{99}
+			
+			\bibitem[Boreale]{p1} Michele Boreale (2012)
+			\newblock \textit{Note per il corso di CODICI E SICUREZZA, UNIFI}
+			
+			\bibitem[Stallings, Brown]{p2} William Stallings, Lawrie Brown (2015)
+			\newblock \textit{Computer security: principles and practice}
+			
+			\bibitem[]{p3} Francesca Merola (2014)
+			\newblock \textit{Slides del corso di elementi di crittografia, UNIROMA3}
+			
+			\bibitem[Wikipedia]{p4} ENIGMA su Wikipedia
+			{
+				\fontsize{10}{0}
+				\newblock \url{https://it.wikipedia.org/wiki/Enigma_(crittografia)}
+			}
+		
+			\bibitem[Cryptomuseum]{p5} Cryptomuseum
+			\newblock \url{https://www.cryptomuseum.com}
+						
+		\end{thebibliography}
+	\end{frame}
+	
+	
+\end{document}
